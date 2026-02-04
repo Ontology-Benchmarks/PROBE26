@@ -7,7 +7,7 @@ export default defineConfig({
 	// The root URL
 	site: 'https://ontology-benchmarks.github.io',
 	// The sub-directory for this specific workshop site
-	base: '/probe26', 
+	base: '/PROBE26', 
 	integrations: [
 		starlight({
 			title: 'PROBE 2026',
