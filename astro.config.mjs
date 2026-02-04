@@ -10,16 +10,19 @@ export default defineConfig({
 	base: '/PROBE26', 
 	integrations: [
 		starlight({
-			title: 'PROBE 2026',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Ontology-Benchmarks/PROBE26' }],
+			title: 'My Docs',
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			sidebar: [
 				{
-					label: 'Home',
-					link: '/',
+					label: 'Guides',
+					items: [
+						// Each item here is one entry in the navigation menu.
+						{ label: 'Example Guide', slug: 'guides/example' },
+					],
 				},
 				{
-					label: 'Challenges',
-					autogenerate: { directory: 'challenges'},
+					label: 'Reference',
+					autogenerate: { directory: 'reference' },
 				},
 			],
 		}),
