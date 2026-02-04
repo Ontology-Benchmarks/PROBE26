@@ -23,6 +23,10 @@ export default defineConfig({
 					label: 'Challenges',
 					autogenerate: { directory: 'challenges'},
 				},
+				{
+					label: 'FOIS 2026',
+					link: 'https://foisconference.org/',
+				}
 			],
 		}),
 	],
