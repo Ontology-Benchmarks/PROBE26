@@ -24,6 +24,10 @@ export default defineConfig({
 					autogenerate: { directory: 'challenges'},
 				},
 				{
+					label: 'References',
+					link: '/references/',
+				},
+				{
 					label: 'FOIS 2026',
 					link: 'https://foisconference.org/',
 				}
