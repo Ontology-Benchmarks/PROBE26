@@ -3,9 +3,12 @@ title: Building Permit Application Process
 description: Building permit application logs from five Dutch municipalities.
 ---
 
-This challenge provides real-life event logs from building permit applications across five Dutch municipalities over approximately four years. The data covers both main application processes and objection/appeal procedures.
+import ImplementationDisclaimer from '../../../components/ImplementationDisclaimer.astro';
 
-## Data Description
+This challenge provides real-life event logs from building permit applications across five Dutch municipalities over approximately four years.
+The data covers both main application processes and objection/appeal procedures.
+
+The data is split into five separate logs, one for each municipality, each labelled with a distinct letter (A,B,C,D,E).
 
 The dataset contains building permit application events with rich attributes:
 
@@ -14,6 +17,14 @@ The dataset contains building permit application events with rich attributes:
 - **Resources:** Information on personnel involved in tasks
 - **Costs:** Application costs captured (attribute SUMleges)
 - **Multi-municipality:** Five municipalities represented, with potentially divergent processes due to timing of procedure changes and regulatory updates
+
+## Summary Statistics
+
+| Metric | Value |
+| --- | --- |
+| Number of records | TBD |
+| Unique event labels | TBD |
+| Filesize | TBD |
 
 ## Challenge Questions
 
@@ -41,6 +52,8 @@ The dataset is hosted at the [4TU research data portal](https://data.4tu.nl/)
     * [Municipality 4](https://data.4tu.nl/datasets/34216d8a-f054-46d4-bf03-d9352f90967e)
     * [Municipality 5](https://data.4tu.nl/datasets/32b70553-0765-4808-b155-aa5319802c8a)
 
-## Challenge Solution Commitments
+## Implementation Considerations
+
+<ImplementationDisclaimer />
 
 1.
