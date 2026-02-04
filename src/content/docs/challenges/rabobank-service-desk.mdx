@@ -16,11 +16,18 @@ The dataset consists of anonymous records from the HP Service Manager tool. The 
 
 ## Summary Statistics
 
-| Metric | Value |
-| --- | --- |
-| Number of records | TBD |
-| Unique event labels | TBD |
-| Filesize | TBD |
+| Metric | Dataset | Value |
+| --- | --- | --- |
+| Number of events | Interaction Records | 147,004 |
+| Number of events | Incident Activity Records | 466,737 |
+| Number of events | Change Records | 30,275 |
+| Number of cases | Interaction Records | 140,338 |
+| Number of cases | Incident Activity Records | 46,616 |
+| Number of cases | Change Records | 18,000 |
+| Filesize | Interaction Records | 21.9 MB |
+| Filesize | Incident Activity Records | 39.2 MB |
+| Filesize | Change Records | 6.7 MB |
+| Filesize | Incident Records | 14.3 MB |
 
 ## Resource Links
 The dataset is hosted at the 3TU datacenter. 
@@ -47,4 +54,16 @@ The process owner is specifically interested in the following:
 
 <ImplementationDisclaimer />
 
-1. **Analysis window definition:** For the purpose of analysis, cases that are too near the end of the window may be excluded. For example, exclusion of any cases initiated within the last 17 days of analysis, such that the analysis window becomes 1 October 2013 - 14 March 2014.
+1. **Temporal proximity as causality:** Impacts can be inferred by co-occurrence within a fixed window on the same service component (SC), but this treats coincidence as cause. Example: an incident on SC-42 within 3 days of a change might be unrelated to that change.
+
+2. **Isolating “clean” changes:** Analyses may choose to selectively exclude changes that occur close together on the same service component to avoid interference. Example: filtering out any change within 3 days of another removes high-velocity systems from the sample.
+
+3. **Definition of steady state:** Steady-state may be defined as activity within a statistical band (e.g., median, standard deviation) for a fixed interval. Example: a consistently noisy service could still be classified as “steady” by variance rules.
+
+4. **Effort and complexity proxies:** Handling time and number of steps can be treated as proxies for effort and complexity, but they depend on logging practices. Example: a 50-day “handle time” may actually reflect waiting time rather than active work.
+
+5. **Favourability labels from volume trends alone:** Impact patterns may be labeled favourable/unfavourable based on ticket volume changes alone. Example: fewer incidents after a change could represent truly improved stability, or falsely improved stability owing to a reporting outage.
+
+6. **Working-hours normalization:** Time calculations may exclude nights/weekends. Example: a Friday-night outage may appear shorter if only 07:00–18:00, Mon–Fri is counted.
+
+7. **Truncating edge effects:** The tail of the dataset may be removed to avoid open cases bias. Example: dropping the final 17 days improves closure completeness but removes recent change impacts.

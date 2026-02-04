@@ -9,11 +9,11 @@ This challenge provides a real-life event log from a Dutch financial institute. 
 
 ## Summary Statistics
 
-| Metric | Value |
-| --- | --- |
-| Number of records | TBD |
-| Unique event labels | TBD |
-| Filesize | TBD |
+| Metric | Dataset | Value |
+| --- | --- | --- |
+| Number of events | Main log | 1,202,267 |
+| Number of cases | Main log | 31,509 |
+| Filesize | Main log | 29.7 MB |
 
 ## Challenge Questions
 The company is particularly interested in addressing the following questions:
@@ -25,9 +25,30 @@ The company is particularly interested in addressing the following questions:
 3. **Multiple Offers:** How many customers ask for more than one offer (single conversation vs. multiple conversations), and how does conversion compare between single-offer and multi-offer applicants?
    
 
+## Resource Links
+
+The dataset is hosted at the [4TU research data portal](https://data.4tu.nl/).
+
+* **[Dataset DOI](https://doi.org/10.4121/uuid:5f3067df-f10b-45da-b98b-86ae4c7a310b)**
+* **Data Files:**
+	* [BPI Challenge 2017.xes.gz](https://data.4tu.nl/file/34c3f44b-3101-4ea9-8281-e38905c68b8d/f3aec4f7-d52c-4217-82f4-57d719a8298c)
+	* [DATA.xml](https://data.4tu.nl/file/34c3f44b-3101-4ea9-8281-e38905c68b8d/23d04d82-76d6-4ca4-97ed-508e6fffc119)
+
 
 ## Implementation Considerations
 
 <ImplementationDisclaimer />
 
-Additional dataset-specific considerations can be added here.
+1. **Silent cancellations vs. active rejection:** Periods of inactivity near common timeout thresholds can be interpreted as automated cancellation, passive disengagement, or a queueing artifact. Example: a case that stays “Pending” for 30 days and then moves to “Cancelled” could be treated as a system timeout, or as a client who disengaged after uploading documents.
+
+2. **Attribution of waiting time:** Delays can be framed as client-driven, staff-driven, or system-driven. Example: long gaps after “Call” might reflect a client not responding, an agent waiting for credit checks, or a batch job that only runs weekly.
+
+3. **Meaning of offer sequences:** Event sequences such as create–call–create can reflect renegotiation, internal review, or proactive re-offering. Example: a “Create Offer” followed by “Call” and then another “Create Offer” could mean the client asked for different terms, or that the bank updated the offer after a policy check.
+
+4. **Process stability definitions:** Stability can be defined structurally (event order/variants) or behaviorally (volumes, batching, seasonality). Example: the control-flow variants may stay constant while case volume spikes and offers are processed in batches each Friday.
+
+5. **Outcome categorization:** Mapping cases to outcome labels (e.g., accepted, declined, cancelled, silent) is sensitive to which “flag” events are treated as definitive. Example: treating “A_Pending” as a success versus requiring “A_Accepted” changes the conversion rate and the share of “silent” cases.
+
+6. **Feature selection effects:** Reducing features based on a single model’s importance scores may underrepresent subgroup effects or nonlinear interactions. Example: a feature that matters only for self-employed applicants may be dropped even if it improves predictions for that subgroup.
+
+7. **Zero-duration events:** Near-zero durations can indicate logging artifacts, automated steps, or coarse timestamps. Example: a “Credit Check” recorded at the same second as “Offer Created” could be a valid automated step rather than a logging error.

@@ -7,16 +7,23 @@ import ImplementationDisclaimer from '../../../components/ImplementationDisclaim
 
 This challenge provides a real-life event log from Volvo IT Belgium. The data relates to service management processes, specifically focusing on how IT incident tickets are resolved.
 
-## Data Description
+The dataset has been used in several process mining papers as a benchmark dataset for process mining techniques.
 
-The dataset contains data from Volvo IT Belgium's IT incident management system. It
+
 
 ## Summary Statistics
-| Metric | Value |
-| --- | --- |
-| Number of records | TBD |
-| Unique event labels | TBD |
-| Filesize | TBD |
+
+| Metric | Dataset | Value |
+| --- | --- | --- |
+| Number of events | Incident Records | 65,533 |
+| Number of events | Closed Problems | 6,660 |
+| Number of events | Open Problems | 2,351 |
+| Number of cases | Incident Records | 7,554 |
+| Number of cases | Closed Problems | 1,487 |
+| Number of cases | Open Problems | 819 |
+| Filesize | Incident Records | TBD |
+| Filesize | Closed Problems | TBD |
+| Filesize | Open Problems | TBD |
 
 ## Resource Links
 The dataset is hosted at the [4TU research data portal](https://data.4tu.nl/)
@@ -42,10 +49,20 @@ The process owner is specifically interested in addressing the following questio
 
 <ImplementationDisclaimer />
 
-1. **Interpretation / qualficiation of ping-pong behaviour:** `Ping-pong' behaviour may be defined differently depending on the analyst's goals or interpretations of the dataset. For example, if ping-pong is defined in terms of events being executed by consecutive distinct resources, one may wish to exclude the "system queue" resource from this analysis as it does not reflect meaningful hand-offs in control flow, rather the invocation of a system. 
+1. **Ping‑pong and agency definition:** Ping‑pong depends on how handoffs are defined and whether system actors (e.g., queues) are included. 
+Excluding system users can clarify human collaboration but may hide automation that drives handoffs.
 
-2. **Definition of push-to-front:** The push-to-front mechanism depends on defining which teams belong to the 2nd or 3rd line and which belong to the 1st line. This can be done via examining the labels in the resource column. However, similarly to the ping-pong case, the "queue" status is always associated with the 2nd line, so this may result in false positives where the first line is still overseeing and working on the same ticket, but the system queue status misleadingly utilizes the 2nd line resource label. 
+2. **Push‑to‑front classification:** Identifying 1st/2nd/3rd line teams from resource labels can misclassify queue statuses, yielding false positives when the queue is tagged as a higher line even if 1st line work continues.
 
-3. **Status and Substatus Relationship:** This dataset does not use conventional 'activity' or 'event type' labels, but rather uses both a status and a sub-status. There are several ways to handle and interpret this, for example, concatenating the status and substatus labels to create an event type label. 
+3. **Status vs. substatus semantics:** Events are captured as status + substatus rather than a single activity label.
+Analysts may concatenate them, choose one, or map to higher‑level events, each changing variant counts and conformance.
 
-4. **Process Conformity Definition:** The notion of 'process conformity' across organizations is not explicitly defined by the process owner. There are several ways to interpret this meaning, and they can be thought of through a structrual vs temporal distinction. In the structural case, only the sequence of events observed may be considered, measuring conformity based on what pattern or sequence is included or not included in a given trace. In the temporal case, process conformity can be measured depending on the time specific tasks or sequences of tasks take. Additionally, other definitions which may involve *both* structural and temporal qualities may be defined.
+4. **Process conformity scope:** Conformity can be structural (event order) or temporal (durations/SLAs). Mixing or choosing one definition affects which organization looks “non‑conformant.”
+
+5. **Completed vs. running cases and rare paths:** Excluding running cases and filtering rare variants improves readability but can remove stalled/abandoned work and exception handling, biasing performance and ping‑pong metrics toward the “happy path.”
+
+6. **Volume‑driven drift:** Splitting logs when volume surges treats frequency changes as process drift. This can reveal operational shifts but can also conflate workload intensity with structural change.
+
+7. **State‑as‑goal mapping:** Treating a wait or pending state as “success” assumes a direct mapping between system status and business outcome, which may be context‑dependent.
+
+8. **Zero‑duration events:** Marking zero‑duration steps as anomalies can remove valid automated transitions, changing throughput and waiting‑time calculations.

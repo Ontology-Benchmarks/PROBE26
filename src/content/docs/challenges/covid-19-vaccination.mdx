@@ -3,11 +3,7 @@ title: COVID-19 World Vaccination Progress
 description: Global COVID-19 vaccination data from multiple reporting sources.
 ---
 
-import ImplementationDisclaimer from '../../../components/ImplementationDisclaimer.astro';
-
 This challenge provides real-world COVID-19 vaccination data collected from multiple sources globally. The dataset combines daily and cumulative vaccination records from countries worldwide, alongside information on vaccination sources and vaccine manufacturers.
-
-## Data Description
 
 The dataset contains vaccination data with the following attributes:
 
@@ -21,11 +17,12 @@ The dataset contains vaccination data with the following attributes:
 
 ## Summary Statistics
 
-| Metric | Value |
-| --- | --- |
-| Number of records | TBD |
-| Unique event labels | TBD |
-| Filesize | TBD |
+| Metric | Dataset | Value |
+| --- | --- | --- |
+| Number of records | country_vaccinations.csv | 86,512 |
+| Number of records | country_vaccinations_by_manufacturer.csv | 35,623 |
+| Filesize | country_vaccinations.csv | 17.7 MB |
+| Filesize | country_vaccinations_by_manufacturer.csv | 1.5 MB |
 
 ## Challenge Questions
 
@@ -53,9 +50,3 @@ The dataset is hosted on Kaggle:
 **Data Files Available:**
 - `country_vaccinations.csv` - Country-level vaccination statistics
 - `country_vaccinations_by_manufacturer.csv` - Vaccine-type breakdown
-
-## Implementation Considerations
-
-<ImplementationDisclaimer />
-
-1.

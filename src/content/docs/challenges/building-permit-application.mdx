@@ -20,11 +20,20 @@ The dataset contains building permit application events with rich attributes:
 
 ## Summary Statistics
 
-| Metric | Value |
-| --- | --- |
-| Number of records | TBD |
-| Unique event labels | TBD |
-| Filesize | TBD |
+| Metric | Dataset | Value |
+| --- | --- | --- |
+| Number of events | Total (all municipalities) | 263,000 |
+| Number of cases | Municipality 1 | 1,199 |
+| Number of cases | Municipality 2 | 832 |
+| Number of cases | Municipality 3 | 1,409 |
+| Number of cases | Municipality 4 | 1,053 |
+| Number of cases | Municipality 5 | 1,156 |
+| Number of cases | Total (all municipalities) | 5,649 |
+| Filesize | Municipality 1 | TBD |
+| Filesize | Municipality 2 | TBD |
+| Filesize | Municipality 3 | TBD |
+| Filesize | Municipality 4 | TBD |
+| Filesize | Municipality 5 | TBD |
 
 ## Challenge Questions
 
@@ -56,4 +65,23 @@ The dataset is hosted at the [4TU research data portal](https://data.4tu.nl/)
 
 <ImplementationDisclaimer />
 
-1.
+1. **Phases as abstracted activitiy sequences:** To simplify the 356 unique activities in the raw data, the analysis may choose to only consider “phase-activities” (e.g., “phase - application received”). 
+While these appear as events (since XES events are flexible and semantically heterogenous), they are also related to states or fluents. 
+This motivates distinguishing the boundary event (phase change) from the phase segment itself.
+
+2. **Temporal ordering via action codes over timestamps:** When timestamps are identical due to batching, sequencing can be imposed using action codes (e.g., `01_HOOFD_010`). 
+This assumes the numeric code reflects the true process ordering, potentially masking concurrency or overlapping workflows.
+
+3. **Mapping low-level activities to functional stages:** Low-level events can be mapped to phases using proximity and statistical metrics.
+This presumes that events 'near' a phase marker are a valid part of that phase, rather than defining complex activities by the fluents/states they achieve.
+
+4. **Definition of roles via statistical clustering:** Roles (e.g., administrators vs. decision-makers) may be inferred from activity patterns instead of formal organizational definitions.
+This treats roles as behavioural dispositions rather than social or organizational positions.
+
+5. **Treatment of ongoing vs. completed cases:** If completeness cannot be detected, analyses may keep all traces.
+This mixes completed process occurrences with in-progress ones, which can skew throughput and outcome interpretations.
+
+6. **Zero-duration event pairs:** Events in the same batch can yield zero durations.
+This treats human activity as instantaneous and obscures the temporal extension needed for workload analysis.
+
+7. **Resource utilization as a proxy for organizational health:** Treating higher utilization as “better” assumes purely quantitative capacity, overlooking qualitative factors like competence or authority that affect outcomes.
