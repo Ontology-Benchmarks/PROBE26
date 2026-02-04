@@ -1,0 +1,49 @@
+---
+title: COVID-19 World Vaccination Progress
+description: Global COVID-19 vaccination data from multiple reporting sources.
+---
+
+This challenge provides real-world COVID-19 vaccination data collected from multiple sources globally. The dataset combines daily and cumulative vaccination records from countries worldwide, alongside information on vaccination sources and vaccine manufacturers.
+
+## Data Description
+
+The dataset contains vaccination data with the following attributes:
+
+- **Country Information:** Country name and ISO code
+- **Date:** Daily entries tracking vaccination progress
+- **Vaccination Metrics:** Total vaccinations, people vaccinated (partial), people fully vaccinated, with both absolute counts and per-capita ratios
+- **Daily Data:** Raw and processed daily vaccination numbers with per-million ratios
+- **Vaccination Scheme Information:** Details on vaccine types used in each country
+- **Source Information:** Reporting sources (national authorities, international organizations, local organizations) and their websites
+- **Manufacturer Data:** Breakdown of vaccinations by vaccine type and date
+
+## Challenge Questions
+
+The challenge addresses the following key questions around data trustworthiness, comparative analysis, and temporal reasoning:
+
+1. **Source Trustworthiness and Consistency:** How do different reporting sources differ in their vaccination data for the same countries and time periods? Which sources are most reliable and complete, and how can inconsistencies be reconciled?
+
+2. **Vaccination Rate Comparisons:** How do vaccination rates compare across different countries, regions, and time periods? What factors explain variations in vaccination progress?
+
+3. **Vaccination Scheme Ontology:** How can different national vaccination schemes (single-dose, two-dose, booster protocols) be accounted for in the data? How does this affect analysis and comparisons?
+
+4. **Missing Data Handling:** How should missing vaccination data be handled and interpreted? Are there systematic patterns in missing data across sources or countries? What is the impact of incomplete reporting on analysis conclusions?
+
+5. **Temporal Consistency:** How do reported vaccination numbers evolve over time, and are there revisions or corrections in historical data? How can these changes be tracked and explained ontologically?
+
+6. **Seasonlity / Weekend Effect:** Is there a noticeable increase or decrease in vaccinations rate across the data, is a "weekend effect" more or less visible in certain countries compared to others?
+
+## Resource Links
+
+The dataset is hosted on Kaggle:
+
+- **[COVID-19 World Vaccination Progress](https://www.kaggle.com/datasets/gpreda/covid-world-vaccination-progress)** - Main dataset on Kaggle
+- **Source:** Data collected daily from [Our World in Data](https://ourworldindata.org/) GitHub repository for COVID-19
+
+**Data Files Available:**
+- `country_vaccinations.csv` - Country-level vaccination statistics
+- `country_vaccinations_by_manufacturer.csv` - Vaccine-type breakdown
+
+## Challenge Solution Commitments
+
+1.

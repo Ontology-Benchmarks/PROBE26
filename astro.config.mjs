@@ -4,21 +4,22 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	// The root URL
+	site: 'https://ontology-benchmarks.github.io',
+	// The sub-directory for this specific workshop site
+	base: '/probe26', 
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: 'PROBE 2026',
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Ontology-Benchmarks/PROBE26' }],
 			sidebar: [
 				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
+					label: 'Home',
+					link: '/',
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Challenges',
+					autogenerate: { directory: 'challenges'},
 				},
 			],
 		}),

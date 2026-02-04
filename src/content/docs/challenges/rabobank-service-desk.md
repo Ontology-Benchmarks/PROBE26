@@ -1,0 +1,38 @@
+---
+title: Rabobank IT Service Management
+description: IT service management logs from Rabobank Group ICT and related questions.
+---
+
+This challenge provides a real-life event log from Rabobank Group ICT. The data relates to ITIL-based service management processes, specifically focusing on how software releases (planned changes) impact the workload of the Service Desk and IT Operations.
+
+## Data Description
+The dataset consists of anonymous records from the HP Service Manager tool. The information is provided in CSV format, organized by different ITIL processes:
+
+* **Interaction Records:** Initial contacts with the service desk.
+* **Incident Records:** Specific service disruptions.
+* **Change Records:** Information regarding planned software releases or infrastructure changes.
+* **Incident Activity Records:** A detailed log of activities specifically related to the Incident cases.
+
+## Resource Links
+The dataset is hosted at the 3TU datacenter. 
+
+* **Full Collection (DOI):** [10.4121/uuid:c3e5d162-0cfd-4bb0-bd82-af5268819c35](https://doi.org/10.4121 uuid:c3e5d162-0cfd-4bb0-bd82-af5268819c35)
+* **Data Files:**
+    * [Change Records](https://doi.org/10.4121/uuid:d5ccb355-ca67-480f-8739-289b9b593aaf)
+    * [Incident Records](https://doi.org/10.4121/uuid:3cfa2260-f5c5-44be-afe1-b70d35288d6d)
+    * [Interaction Records](https://doi.org/10.4121/uuid:3d5ae0ce-198c-4b5c-b0f9-60d3035d07bf)
+    * [Incident Activity Records](https://doi.org/10.4121/uuid:86977bac-f874-49cf-8337-80f26bf5d2ef)
+* **Documentation:** [Quick Reference Guide](https://ais.win.tue.nl/bpi/2014/quick_reference_guide.pdf)
+
+## Challenge Questions
+The process owner is specifically interested in the following:
+
+1.  **Identification of Impact-patterns:** Is there a correlation between the implementation of a change and the volume of closed interactions or incidents?
+2.  **Pattern Parameters:** For the identified impact-patterns:
+    * What is the average period required to return to a steady state?
+    * What is the average increase or decrease in Closed Interactions once a new steady state is reached?
+3.  **Average Steps to Resolution:** Is the service level (measured by steps to resolution) maintained or improved following a change implementation?
+4.  **Predictive Modeling:** Can a model be designed to predict the workload impact of future software releases on the Service Desk?
+
+## Challenge Solution Commitments
+1. **Analysis window definition:** For the purpose of analysis, cases that are too near the end of the window may be excluded. For example, exclusion of any cases initiated within the last 17 days of analysis, such that the analysis window becomes 1 October 2013 - 14 March 2014.

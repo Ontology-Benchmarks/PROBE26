@@ -1,0 +1,46 @@
+---
+title: Building Permit Application Process
+description: Building permit application logs from five Dutch municipalities.
+---
+
+This challenge provides real-life event logs from building permit applications across five Dutch municipalities over approximately four years. The data covers both main application processes and objection/appeal procedures.
+
+## Data Description
+
+The dataset contains building permit application events with rich attributes:
+
+- **Activities:** Coded activities (e.g., `01_HOOFD_xxx` for main process, `01_BB_xxx` for objections/complaints) with both Dutch and English labels
+- **Stages:** Multiple stages including main applications and objection procedures in various states
+- **Resources:** Information on personnel involved in tasks
+- **Costs:** Application costs captured (attribute SUMleges)
+- **Multi-municipality:** Five municipalities represented, with potentially divergent processes due to timing of procedure changes and regulatory updates
+
+## Challenge Questions
+
+The municipalities are interested in addressing the following questions:
+
+1. **Organizational Roles and Structures:** What are the roles of people involved in various process stages, and how do these roles differ across municipalities? Where are the organizational improvement opportunities for each municipality?
+
+2. **Impact of Physical Colocation:** Two municipalities recently moved their employees into the same physical location. Did this lead to changes in their processes, and if so, what differs?
+
+3. **Outsourcing Effects:** Some procedures will be outsourced from 2018 onwards (moved outside the process). What will be the effect of this on organizational structures in the five municipalities?
+
+4. **Throughput Time Analysis:** Where are the differences in throughput times between municipalities, and how can these differences be explained? What are the differences in control flow between municipalities?
+
+5. **Cross-Organizational Patterns:** Can you identify employees who worked across multiple municipalities? Do they show different behavior patterns?
+
+## Resource Links
+
+The dataset is hosted at the [4TU research data portal](https://data.4tu.nl/)
+
+* **Collection:** [BPI Challenge 2015](https://data.4tu.nl/collections/BPI_Challenge_2015/5065424)
+* **Individual Municipality Logs:**
+    * [Municipality 1](https://data.4tu.nl/datasets/6f35269e-4ce7-4bc4-9abb-b3cea04cad00)
+    * [Municipality 2](https://data.4tu.nl/datasets/372d0cad-3fb1-4627-8ea9-51a09923d331)
+    * [Municipality 3](https://data.4tu.nl/datasets/d6741425-5f62-4a59-92c5-08bae64b4611)
+    * [Municipality 4](https://data.4tu.nl/datasets/34216d8a-f054-46d4-bf03-d9352f90967e)
+    * [Municipality 5](https://data.4tu.nl/datasets/32b70553-0765-4808-b155-aa5319802c8a)
+
+## Challenge Solution Commitments
+
+1.

@@ -1,40 +1,99 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
-hero:
-  tagline: Congrats on setting up a new Starlight project!
-  image:
-    file: ../../assets/houston.webp
-  actions:
-    - text: Example Guide
-      link: /guides/example/
-      icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
-      variant: minimal
+title: PROBE 2026
+description: A challenge-based workshop on the operational realization of ontologies for process data.
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Aside, Steps } from '@astrojs/starlight/components';
 
-## Next steps
+**PROBE 2026** is a challenge-based workshop focused on the **operational realization** of ontologies for process data.
+We invite users of foundational and domain ontologies to challenge the expressive and applicative capabilities of their ontologies
+on real-world process data and report how ontologies enable rigorous, data-driven reasoning and analysis.
 
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
-</CardGrid>
+<Aside type="tip" title="At-a-glance">
+	Ontology-driven • Real-world data • Challenge-based
+
+	PROBE 2026 centers on practical, reproducible ontology applications grounded in industrial process logs.
+</Aside>
+
+## Motivation
+
+Many ontologies posses the theoretical expressiveness to represent complex process phenomena.
+However, their application to real-world process data, including its messy, incomplete, and large-scale nature,
+remains under-explored. PROBE 2026 aims to fill this gap by providing a curated set of real-world challenge problems that require
+complex reasoning over industrial process data.
+
+## Call for Papers
+
+**Does your ontology work on real process data?** PROBE 2026 invites solution papers that apply foundational or domain ontologies to  solve real-world challenges centered around industrial process data.
+
+### Topics of Interest
+
+Submissions should tackle the application of some ontology(ies) to at least one of the [PROBE 2026 challenge problems](/challenges).
+Submissions may focus on various topics around how ontologies can be operationalized for industrial process data analysis:
+
+- **Semantic Heterogeneity:** Handling semantic heterogeneity of events in event logs (e.g., "Triage" as state vs activity)
+- **Process Perspectives:** Ontology-driven process perspectives (e.g., formally representing abstraction, aggregation, decomposition of occurrences and events)
+- **Ontology Comparison:** Ontology comparison (e.g., UFO vs BFO vs DOLCE on real-world process data)
+- **Operational Realization:** Operational realization (e.g., OBDA, virtual knowledge graphs, semi-automated mappings)
+- **Reasoning Mechanisms:** Reasoning mechanisms (e.g., ATPs, SMT, SPARQL, or others)
+
+### Submission Types
+
+- **Challenge Reports (5–12 pages):** Focus on a specific implementation, including ontology application choices, integration techniques, and results.
+- **Extended Abstracts (2–5 pages):** High-level overview or preliminary findings on a challenge.
+
+### Submission Instructions
+
+<Steps>
+	<ol>
+		<li>Use the one-column LaTeX <strong>CEURART</strong> style: https://ceur-ws.org/HOWTOSUBMIT.html#CEURART</li>
+		<li>Overleaf template: https://www.overleaf.com/latex/templates/template-for-submissions-to-ceur-workshop-proceedings-ceur-ws-dot-org/wqyfdgftmcfw</li>
+		<li>Follow the CEUR-WS <strong>Generative AI declaration</strong> policy: https://ceur-ws.org/GenAI/Policy.html</li>
+		<li>Submissions will be via <a href="https://easychair.org/conferences/?conf=fois2026"><strong>EasyChair</strong></a> (FOIS 2026 → workshop track).</li>
+	</ol>
+</Steps>
+
+## Important Dates
+
+<Steps>
+	<ol>
+		<li><strong>Paper Submission — June 3, 2026:</strong> Workshop paper submission deadline</li>
+		<li><strong>Author Notification — July 15, 2026:</strong> Notification of acceptance</li>
+		<li><strong>Camera-Ready — July 31, 2026:</strong> Camera-ready submission deadline</li>
+		<li><strong>Workshop — September 21–22, 2026:</strong> Workshop days (co-located with FOIS 2026 in Vitória, Brazil)</li>
+	</ol>
+</Steps>
+
+## Review Process
+
+Submissions are reviewed based on:
+- **Correctness**
+- **Reproducibility**
+- **Ontological transparency** (how the ontology was used to derive results)
+
+Purely algorithmic solutions without explicit semantic modeling will be rejected.
+We expect at least two reviews per paper.
+
+## Workshop Format
+
+<Steps>
+	<ol>
+		<li><strong>Problem Overview:</strong> Chairs present the source datasets and motivating domain problems.</li>
+		<li><strong>Solution Showcase:</strong> Authors present their ontology-driven solutions to the challenges.</li>
+		<li><strong>Comparative Panel:</strong> Discussion comparing how different ontologies tackled the challenges.</li>
+		<li><strong>Next Steps Panel:</strong> Identify new challenge problems and future directions.</li>
+	</ol>
+</Steps>
+
+## Outcomes
+
+The workshop will produce a comparative report on the **operational readiness** of current process ontologies, highlighting which commitments facilitate or hinder data-driven reasoning.
+
+## Location & Contact
+
+The workshop is co-located with FOIS 2026 as part of the joint ontology workshops (JOWO) and will take place in **Vitória, Brazil**.
+
+**For questions, please contact the workshop chairs:**
+
+- **Riley Moher**, University of Toronto — [riley.moher@mail.utoronto.ca](mailto:riley.moher@mail.utoronto.ca)
+- **Michael Gruninger**, University of Toronto — [gruninger@mie.utoronto.ca](mailto:gruninger@mie.utoronto.ca)
