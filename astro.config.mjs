@@ -13,7 +13,7 @@ export default defineConfig({
 			title: 'PROBE2026 Webpage',
 			favicon: '/uoft-logo.png',
 			description: 'Webpage for the PROBE 2026 Ontology Benchmarking Workshop',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://ontology-benchmarks.github.io/PROBE26/' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Ontology-Benchmarks/PROBE26' }],
 			sidebar: [
 				{
 					label: 'Home',
