@@ -65,14 +65,23 @@ The dataset is hosted at the [4TU research data portal](https://data.4tu.nl/)
 
 <ImplementationDisclaimer />
 
-1. **States vs. activities:** Status changes like `A_Submitted`, `A_Validating`, or `A_Accepted` can be modeled as events, but they also represent state phases. Treating them purely as instant activities can hide the duration of being “in” a state and affect throughput or waiting-time analysis.
+1. **Phases as abstracted activitiy sequences:** To simplify the 356 unique activities in the raw data, the analysis may choose to only consider “phase-activities” (e.g., “phase - application received”). 
+While these appear as events (since XES events are flexible and semantically heterogenous), they are also related to states or fluents. 
+This motivates distinguishing the boundary event (phase change) from the phase segment itself.
 
-2. **Application vs. offer lifecycles:** Application (`A_`) and Offer (`O_`) events can be interleaved into one case stream, but this flattens a one‑to‑many relationship. If offers have their own lifecycle, modeling only the application as the case can turn distinct offer threads into loops.
+2. **Temporal ordering via action codes over timestamps:** When timestamps are identical due to batching, sequencing can be imposed using action codes (e.g., `01_HOOFD_010`). 
+This assumes the numeric code reflects the true process ordering, potentially masking concurrency or overlapping workflows.
 
-3. **Handover inference from sequence:** A simple A→B sequence can be treated as a handover, but the next event may be triggered by a timer, an external call, or a parallel task. Sequential ordering is not always causal transfer of work.
+3. **Mapping low-level activities to functional stages:** Low-level events can be mapped to phases using proximity and statistical metrics.
+This presumes that events 'near' a phase marker are a valid part of that phase, rather than defining complex activities by the fluents/states they achieve.
 
-4. **System actor agency:** Including system users (e.g., `User_1`) in resource analysis treats automation as a peer actor. This can be useful, but it may distort human workload and collaboration metrics if not separated.
+4. **Definition of roles via statistical clustering:** Roles (e.g., administrators vs. decision-makers) may be inferred from activity patterns instead of formal organizational definitions.
+This treats roles as behavioural dispositions rather than social or organizational positions.
 
-5. **Closed‑world throughput:** Measuring throughput as start‑to‑end duration treats all elapsed time as process time. This can conflate processing with waiting/queueing and may bias comparisons across municipalities with different staffing or queue policies.
+5. **Treatment of ongoing vs. completed cases:** If completeness cannot be detected, analyses may keep all traces.
+This mixes completed process occurrences with in-progress ones, which can skew throughput and outcome interpretations.
 
-6. **Complete vs. running cases:** If incomplete traces are retained, short or abandoned cases may look like fast completions. If they are removed, active work is excluded. Either choice changes outcome and performance statistics.
+6. **Zero-duration event pairs:** Events in the same batch can yield zero durations.
+This treats human activity as instantaneous and obscures the temporal extension needed for workload analysis.
+
+7. **Resource utilization as a proxy for organizational health:** Treating higher utilization as “better” assumes purely quantitative capacity, overlooking qualitative factors like competence or authority that affect outcomes.
