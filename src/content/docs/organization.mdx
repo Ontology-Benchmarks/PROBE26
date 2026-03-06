@@ -6,39 +6,30 @@ sidebar:
 pagination: false
 ---
 
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astrojs/starlight/components';
 
 ## Organizing Committee
 
 <CardGrid class="single-column-grid">
-	<LinkCard
-		title="Riley Moher"
-		href="mailto:riley.moher@mail.utoronto.ca"
-		description="Workshop Chair, University of Toronto — riley.moher@mail.utoronto.ca"
-	/>
-	<LinkCard
-		title="Michael Gruninger"
-		href="mailto:gruninger@mie.utoronto.ca"
-		description="Workshop Chair, University of Toronto — gruninger@mie.utoronto.ca"
-	/>
+	<Card title="Riley Moher">
+		Workshop Chair, University of Toronto — riley.moher@mail.utoronto.ca
+	</Card>
+	<Card title="Michael Gruninger">
+		Workshop Chair, University of Toronto — gruninger@mie.utoronto.ca
+	</Card>
 </CardGrid>
 
 ## Program Committee
 
 <CardGrid class="single-column-grid">
-	<LinkCard
-		title="John Beverley"
-		href="mailto:johnbeve@buffalo.edu"
-		description="Program Committee Member, University at Buffalo — john.beve@buffalo.edu"
-	/>
-	<LinkCard
-		title="Giancarlo Guizzardi"
-		href="mailto:g.guizzardi@utwente.nl"
-		description="Program Committee Member, University of Twente — g.guizzardi@utwente.nl"
-	/>
-	<LinkCard
-		title="Stay Tuned"
-		description="This page will be updated with additional program committee members as they are confirmed."
-	/>
+	<Card title="John Beverley">
+		Program Committee Member, University at Buffalo — john.beve@buffalo.edu
+	</Card>
+	<Card title="Giancarlo Guizzardi">
+		Program Committee Member, University of Twente — g.guizzardi@utwente.nl
+	</Card>
+	<Card title="Stay Tuned">
+		This page will be updated with additional program committee members as they are confirmed.
+	</Card>
 
 </CardGrid>
