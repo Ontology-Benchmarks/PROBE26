@@ -24,6 +24,10 @@ export default defineConfig({
 					autogenerate: { directory: 'challenges'},
 				},
 				{
+					label: 'Organization',
+					link: '/organization/',
+				},
+				{
 					label: 'References',
 					link: '/references/',
 				},
