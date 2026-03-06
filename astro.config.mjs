@@ -32,9 +32,6 @@ export default defineConfig({
 					link: 'https://foisconference.org/',
 				}
 			],
-			components: {
-				Head: './src/components/CommonHead.astro',
-			},
 		}),
 	],
 });
