@@ -1,6 +1,9 @@
 ---
 title: Organization
 description: Organization Details for the Workshop.
+sidebar:
+  order: 4
+pagination: false
 ---
 
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
@@ -11,12 +14,12 @@ import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 	<LinkCard
 		title="Riley Moher"
 		href="mailto:riley.moher@mail.utoronto.ca"
-		description="Workshop Chair, University of Toronto"
+		description="Workshop Chair, University of Toronto — riley.moher@mail.utoronto.ca"
 	/>
 	<LinkCard
 		title="Michael Gruninger"
 		href="mailto:gruninger@mie.utoronto.ca"
-		description="Workshop Chair, University of Toronto"
+		description="Workshop Chair, University of Toronto — gruninger@mie.utoronto.ca"
 	/>
 </CardGrid>
 
@@ -24,8 +27,18 @@ import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 <CardGrid class="single-column-grid">
 	<LinkCard
-		title="To Be Announced"
-		href="#"
-		description="Program committee members will be listed here."
+		title="John Beverly"
+		href="mailto:johnbeve@buffalo.edu"
+		description="Program Committee Member, University at Buffalo — john.beve@buffalo.edu"
 	/>
+	<LinkCard
+		title="Giancarlo Guizzardi"
+		href="mailto:g.guizzardi@utwente.nl"
+		description="Program Committee Member, University of Twente — g.guizzardi@utwente.nl"
+	/>
+	<LinkCard
+		title="Stay Tuned"
+		description="This page will be updated with additional program committee members as they are confirmed."
+	/>
+
 </CardGrid>
